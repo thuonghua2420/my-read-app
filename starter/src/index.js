@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import BookSearch from "./BookSearch";
+import Page404 from "./Page404";
  
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/search",
     element: <BookSearch />,
+  },
+  {
+    path: "*",
+    element: <Page404 />,
   },
 ]);
  

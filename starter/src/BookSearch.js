@@ -8,14 +8,15 @@ const BookSearch = () => {
   const [searchBook, setSearchBook] = useState([]);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
-  const debounceSearch = useRef(debounce(value => search(value), 200)).current;
- 
+
   const handleChange = (event) => {
     let value = event.target.value;
     setQuery(value);
     debounceSearch(value);
   }
- 
+  
+  const debounceSearch = useRef(debounce(value => search(value), 200)).current;
+
   const search = (query) => {
     if (query) {
       BooksAPI.search(query).then(books => {
