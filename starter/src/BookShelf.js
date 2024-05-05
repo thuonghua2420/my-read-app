@@ -13,8 +13,8 @@ const BookShelf = (bookListData) => {
                 <ol className="books-grid">
                     {books.map((book) => {
                         return (
-                            <li>
-                                <DataBook key={book.id} book={book} updateSheft = {updateSheft} />
+                            <li key={book.id}>
+                                <DataBook book={book} updateSheft = {updateSheft} />
                             </li>
                         )
                     })}
