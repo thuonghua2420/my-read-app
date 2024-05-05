@@ -14,7 +14,7 @@ const BookSearch = () => {
     setQuery(value);
     debounceSearch(value);
   }
-  
+
   const debounceSearch = useRef(debounce(value => search(value), 200)).current;
 
   const search = (query) => {
@@ -65,8 +65,8 @@ const BookSearch = () => {
         <ol className="books-grid">
           {searchBook.map((book) => {
             return (
-              <li>
-                <DataBook key={book.id} book={book} checkSearch/>
+              <li key={book.id}>
+                <DataBook book={book} checkSearch/>
               </li>
             )
           })}
